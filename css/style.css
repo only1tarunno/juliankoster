@@ -73,14 +73,6 @@ input[type="radio"].tab:checked {
 .table {
   border: 1px solid #d1d7dc;
 }
-#sidebarImage {
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-.hidden {
-  opacity: 0;
-}
 
 @media (max-width: 590px) {
   .tab {
