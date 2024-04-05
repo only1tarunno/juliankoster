@@ -6,10 +6,12 @@ body {
 }
 p,
 ul,
-a {
+a,
+td {
   font-family: "Manrope", sans-serif;
   color: #495057;
 }
+
 a:hover {
   text-decoration-line: none !important;
 }
@@ -37,4 +39,31 @@ a:hover {
 
 .bottom-btn a:hover::before {
   width: 100%;
+}
+
+.course th,
+.course td {
+  border: 1px solid #d1d7dc;
+}
+.Course-Content tr {
+  background-color: #f0f0f0;
+}
+.Course-Content tr:nth-child(2n) {
+  background-color: #fff !important;
+}
+.tab {
+  height: auto;
+  padding: 12px 45px;
+  color: #fff;
+  background-color: #7b2b73;
+  margin-bottom: 15px;
+}
+
+.tab-2 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+input[type="radio"].tab:checked {
+  background-color: #aa3c9f;
 }
