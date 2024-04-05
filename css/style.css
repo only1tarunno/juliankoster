@@ -25,6 +25,7 @@ a:hover {
 .bottom-btn a {
   font-family: "Poppins", sans-serif;
   position: relative;
+  display: inline-block;
 }
 
 .bottom-btn a::before {
@@ -35,10 +36,12 @@ a:hover {
   background-color: #7b2b73;
   bottom: -5px;
   left: 0;
+  transition: 0.3s all ease-in-out;
 }
 
 .bottom-btn a:hover::before {
   width: 100%;
+  transition: 0.3s all ease-in-out;
 }
 
 .course th,
@@ -66,4 +69,7 @@ a:hover {
 
 input[type="radio"].tab:checked {
   background-color: #aa3c9f;
+}
+.table {
+  border: 1px solid #d1d7dc;
 }
