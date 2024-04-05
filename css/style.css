@@ -73,3 +73,25 @@ input[type="radio"].tab:checked {
 .table {
   border: 1px solid #d1d7dc;
 }
+
+@media (max-width: 575px) {
+  .tab {
+    padding: 8px 16px;
+  }
+  .tab-2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 425px) {
+  .tab {
+    padding: 8px 16px;
+  }
+  .tab-2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .tab:is(input[type="radio"]):after {
+    font-size: 12px;
+  }
+}
