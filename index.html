@@ -50,8 +50,8 @@
       <div class="container py-10 lg:py-20 px-5 lg:px-10 text-white space-y-5">
         <div class="text-sm breadcrumbs">
           <ul class="text-[#A097F1]">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Documents</a></li>
+            <li><a href="#" class="text-[#A097F1]">Home</a></li>
+            <li><a href="#" class="text-[#A097F1]">Documents</a></li>
             <li>Middenkader</li>
           </ul>
         </div>
@@ -1261,10 +1261,18 @@
       </div>
       <!-- sidebar start  -->
       <div class="lg:col-span-4">
-        <div class="border border-[#D1D7DC] shadow-xl sticky top-16">
-          <div class="img-box">
+        <div
+          class="border border-[#D1D7DC] shadow-xl sticky top-16 bg-white"
+          id="sidebarContainer"
+        >
+          <div class="img-box" id="imgBox">
             <div>
-              <img src="images/sidebarimg.jpg" class="w-full" alt="" />
+              <img
+                src="images/sidebarimg.jpg"
+                class="w-full"
+                alt=""
+                id="sidebarImage"
+              />
             </div>
             <div class="p-5 space-y-4">
               <p class="text-[38px]">
@@ -1284,10 +1292,10 @@
               </p>
             </div>
           </div>
-          <div class="sidebar-content border-t border-[#D1D7DC] p-5 space-y-5">
+          <div class="sidebar-content border-t border-[#D1D7DC] p-5 space-y-4">
             <h5 class="font-medium text-[28px]">Deze training bevat:</h5>
 
-            <div class="w-28 ml-20 space-y-5">
+            <div class="w-28 ml-20 space-y-3">
               <div class="flex gap-2 items-center">
                 <img src="images/dinner.png" class="w-5" alt="" />
                 <p class="text-sm">Lunch buffet</p>
@@ -1321,5 +1329,40 @@
       </div>
     </section>
     <!-- mainbody end here  -->
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var img = document.getElementById("sidebarImage");
+
+        if (window.scrollY > 350) {
+          img.classList.add("hidden");
+        } else {
+          img.classList.remove("hidden");
+        }
+      });
+
+      // Function to detect if sidebar is sticky
+      function isSticky(element) {
+        return window.getComputedStyle(element).position == "sticky";
+      }
+
+      var sidebarContainer = document.getElementById("sidebarContainer");
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.intersectionRatio < 1 && isSticky(entry.target)) {
+              document.getElementById("sidebarImage").classList.add("hidden");
+            } else {
+              document
+                .getElementById("sidebarImage")
+                .classList.remove("hidden");
+            }
+          });
+        },
+        { threshold: [1] }
+      );
+
+      observer.observe(sidebarContainer);
+    </script>
   </body>
 </html>
