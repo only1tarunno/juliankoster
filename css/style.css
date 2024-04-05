@@ -5,8 +5,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 p,
-ul {
+ul,
+a {
   font-family: "Manrope", sans-serif;
+  color: #495057;
 }
 a:hover {
   text-decoration-line: none !important;
@@ -17,4 +19,22 @@ a:hover {
   content: "";
   opacity: 1;
   color: #ffffff;
+}
+.bottom-btn a {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.bottom-btn a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #7b2b73;
+  bottom: -5px;
+  left: 0;
+}
+
+.bottom-btn a:hover::before {
+  width: 100%;
 }
